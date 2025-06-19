@@ -10,8 +10,8 @@ function isPrime(num) {
     return true;
 }
 
-
 let checkPrime = isPrime(5); // Output - True
+console.log(checkPrime)
 
 // Find Second Max Number in Array 
 function secondMax(arr) {
@@ -36,7 +36,8 @@ function secondMax(arr) {
 }
 
 
-let secondMaxNumber = secondMax([8, 6, 2, 3, 1, 4, 7, 8, 9, 6, 3, 2, 10, 9]); // Output - 9
+let secondMaxNumber = secondMax([8, 6, 2, 3, 1, 4, 7, 8, 9, 6, 3, 2, 10, 9]);
+console.log(secondMaxNumber); // Output - 9
 
 
 // JavaScript Arrays and its Methods
@@ -54,6 +55,10 @@ console.log(size); // Size of Array
 // delete arr[2];
 
 // arrr.sort(function(a,b) {return a - b}) Sort the array by numbers
+
+// Array indexOf()	Returns the first position of an element value
+// Array lastIndexOf()	Returns the last position of an element value
+// Array includes()	Returns true if an element value is present in an array
 
 
 
@@ -118,8 +123,8 @@ arr2.map((num) => {
 
 // Example 2
 function evenNumbers(arr) {
-    for(let i= 0; i < arr.length;i += 1) {
-        if(arr[i] % 2 == 0) return arr[i];
+    for (let i = 0; i < arr.length; i += 1) {
+        if (arr[i] % 2 == 0) return arr[i];
     }
 }
 arr2.filter(evenNumbers)
@@ -142,22 +147,22 @@ function printName(name) {
 
 
 // JavaScript IIFEs (Invoked Function Expressions)
-(function maleOrFemale(gender){
-    if(gender == "Male") {
+(function maleOrFemale(gender) {
+    if (gender == "Male") {
         console.log("I am Male");
-    } else if(gender == "Female") {
+    } else if (gender == "Female") {
         console.log("I am Female");
     } else {
         console.log("No Gender Found");
     }
-})("Male") 
+})("Male")
 
 
 // JavaScript Currying
 function brewCoffee(beans) {
-return function(water) {
-return beans * water;
-}
+    return function (water) {
+        return beans * water;
+    }
 }
 const coffeeMaker = brewCoffee(10);
 // returns a function that multiplies its argument by 10 (the number of coffee beans)
@@ -168,7 +173,59 @@ console.log(coffeeMaker(12)); // prints 120 (the amount of water)
 
 let x = ["Apple", "Mango", "Orange"]
 let y = x[Symbol.iterator]()
-y.next()
+console.log(y.next());
 
+
+
+// JS Objects
+
+const person = {
+    firstName: "Muhammad Zeeshan",
+    lastName: "Hassan",
+    age: 23,
+    eyeColor: "black",
+    getFullName: function () {
+        console.log(this.firstName + " " + this.lastName);
+    }
+};
+
+// Performing CRUD on Objects
+//Create and Read
+person.nationality = "Pakistani"
+console.log(person);
+// Update
+person.nationality = "USA"
+console.log(person)
+// Delete
+delete person.nationality;
+console.log(person)
+person.getFullName();
+
+// Displaying with loop
+for (let x in person) {
+    console.log(person[x]);
+}
+
+console.log(Object.values(person));
+console.log(Object.entries(person));
+console.log(JSON.stringify(person));
+
+// Creating Object with Generic Function
+
+function Bus(name, model) {
+    this.name = name;
+    this.model = model;
+}
+
+const bus = new Bus("Ford", 2025);
+console.log(bus)
+Bus.prototype.weight = 1000;
+
+// String
+// Methods
+// +, toUpperCase, toLowerCase, padStart, padEnd
+// concat, slice, substring, trim, trimStart, trimEnd
+// repeat, replace, replaceAll, at, charAt, charCodeAt, indexOf, lastIndexOf
+// Implementation on W3Schools
 
 
